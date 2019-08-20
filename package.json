@@ -1,0 +1,12 @@
+{
+  "name": "rails60_playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:motchang/rails60_playground.git",
+  "author": "motchang <motchang@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
