@@ -18,13 +18,16 @@ gem 'slim-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'dotenv-rails'
+
   gem 'pry-byebug'
   gem 'pry-coolline'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
 
-  gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
