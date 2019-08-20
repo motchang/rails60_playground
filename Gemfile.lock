@@ -185,7 +185,6 @@ DEPENDENCIES
   rails (~> 6.0.0)
   selenium-webdriver
   sqlite3 (~> 1.4)
-  tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
 
