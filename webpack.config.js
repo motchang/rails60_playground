@@ -1,3 +1,4 @@
+const glob = require("glob");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -14,8 +15,11 @@ const webpack = require("webpack");
  *
  */
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WriteFilePlugin = require("write-file-webpack-plugin");
+
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
  * page for you when you compile webpack, which will make you start
@@ -27,21 +31,29 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
 
   output: {
-    filename: "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "public", "packs")
+    publicPath: "/packs/",
+    path: path.resolve(__dirname, "public", "packs"),
+    filename: "[name].[hash].js"
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+      ignoreOrder: false
+    }),
     new ManifestPlugin({
       fileName: "manifest.json",
       publicPath: "/packs/",
       writeToFileEmit: true
-    })
+    }),
+    new WriteFilePlugin()
   ],
 
   module: {
@@ -72,7 +84,17 @@ module.exports = {
   },
 
   devServer: {
-    open: true
+    publicPath: "/packs/",
+    contentBase: __dirname + "/public/",
+    host: "0.0.0.0",
+    port: 3035,
+    disableHostCheck: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    open: false,
+    inline: true,
+    hot: true
   },
 
   resolve: {

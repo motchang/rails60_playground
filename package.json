@@ -9,7 +9,8 @@
     "@webpack-cli/init": "^0.2.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "webpack": "^4.39.2"
+    "webpack": "^4.39.2",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "scripts": {
     "dev": "webpack --progress",
@@ -18,9 +19,13 @@
     "start": "webpack-dev-server"
   },
   "devDependencies": {
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.2.0",
     "style-loader": "^1.0.0",
