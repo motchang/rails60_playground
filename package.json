@@ -10,7 +10,8 @@
     "dev": "webpack --progress",
     "watch": "webpack --progress --watch",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@webpack-cli/init": "^0.2.2",
