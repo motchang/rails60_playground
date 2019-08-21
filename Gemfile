@@ -9,7 +9,13 @@ gem 'rails', '~> 6.0.0'
 
 gem 'puma', '~> 3.11'
 
-gem 'sqlite3', '~> 1.4'
+group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+end
+
+group :production do
+  gem 'pg'
+end
 
 gem 'config'
 gem 'jbuilder', '~> 2.7'
