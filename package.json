@@ -15,7 +15,8 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "heroku-postbuild": "yarn run build",
-    "postinstall": "yarn run build"
+    "postinstall": "yarn run build",
+    "lint": "eslint './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@webpack-cli/init": "^0.2.2",
