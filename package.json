@@ -17,7 +17,8 @@
     "dev": "webpack --progress",
     "watch": "webpack --progress --watch",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "postinstall": "webpack"
   },
   "devDependencies": {
     "@types/react": "^16.9.2",
@@ -37,5 +38,8 @@
     "webpack-dev-server": "^3.8.0",
     "webpack-manifest-plugin": "^2.0.4"
   },
-  "description": "My webpack project"
+  "description": "My webpack project",
+  "engines": {
+    "yarn": "1.x"
+  }
 }

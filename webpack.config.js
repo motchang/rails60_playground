@@ -32,7 +32,7 @@ const WriteFilePlugin = require("write-file-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    app: "./src/index.tsx"
+    main: "./src/index.tsx"
   },
 
   output: {
@@ -46,7 +46,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "[name].[hash].css",
       chunkFilename: "[id].css",
       ignoreOrder: false
     }),
@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ["style-loader", { loader: "css-loader" }]
+        loader: [MiniCssExtractPlugin.loader, { loader: "css-loader" }]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
