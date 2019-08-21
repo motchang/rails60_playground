@@ -18,7 +18,8 @@
     "watch": "webpack --progress --watch",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "yarn run build",
+    "postinstall": "yarn run build"
   },
   "devDependencies": {
     "@types/react": "^16.9.2",
