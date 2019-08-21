@@ -28,6 +28,7 @@ module.exports = {
     'import/order': ['error', { 'newlines-between': 'always' }],
     'import/prefer-default-export': 0,
     'no-return-assign': 0,
+    "react-hooks/exhaustive-deps": "warn",
     'react-hooks/rules-of-hooks': 'error',
     // FixMe https://github.com/yannickcr/eslint-plugin-react/issues/1846
     'react/button-has-type': 'off',
