@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -14,8 +14,8 @@ const webpack = require('webpack');
  *
  */
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
  * page for you when you compile webpack, which will make you start
@@ -26,56 +26,56 @@ const ManifestPlugin = require('webpack-manifest-plugin');
  */
 
 module.exports = {
-	mode: 'development',
-	entry: './src/index.ts',
+  mode: "development",
+  entry: "./src/index.ts",
 
-	output: {
-		filename: '[name].[chunkhash].js',
-		path: path.resolve(__dirname, 'public', 'packs')
-	},
+  output: {
+    filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, "public", "packs")
+  },
 
-	plugins: [
+  plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin(),
     new ManifestPlugin({
-      fileName: 'manifest.json',
-      publicPath: '/packs/',
+      fileName: "manifest.json",
+      publicPath: "/packs/",
       writeToFileEmit: true
     })
   ],
 
-	module: {
-		rules: [
-			{
-				test: /.(ts|tsx)?$/,
-				loader: 'ts-loader',
-				include: [path.resolve(__dirname, 'src')],
-				exclude: [/node_modules/]
-			}
-		]
-	},
+  module: {
+    rules: [
+      {
+        test: /.(ts|tsx)?$/,
+        loader: "ts-loader",
+        include: [path.resolve(__dirname, "src")],
+        exclude: [/node_modules/]
+      }
+    ]
+  },
 
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				vendors: {
-					priority: -10,
-					test: /[\\/]node_modules[\\/]/
-				}
-			},
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          priority: -10,
+          test: /[\\/]node_modules[\\/]/
+        }
+      },
 
-			chunks: 'async',
-			minChunks: 1,
-			minSize: 30000,
-			name: true
-		}
-	},
+      chunks: "async",
+      minChunks: 1,
+      minSize: 30000,
+      name: true
+    }
+  },
 
-	devServer: {
-		open: true
-	},
+  devServer: {
+    open: true
+  },
 
-	resolve: {
-		extensions: ['.tsx', '.ts', '.js']
-	}
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  }
 };
