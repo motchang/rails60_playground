@@ -4,9 +4,17 @@
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es5",
     "allowJs": true,
-    "jsx": "react"
+    "jsx": "react",
+
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+
+    "moduleResolution": "node",
+    "sourceMap": true
   }
 }

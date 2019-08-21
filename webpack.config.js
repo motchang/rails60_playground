@@ -31,7 +31,9 @@ const WriteFilePlugin = require("write-file-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: {
+    app: "./src/index.tsx"
+  },
 
   output: {
     publicPath: "/packs/",
@@ -59,10 +61,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(ts|tsx)?$/,
+        test: /\.(ts|tsx)?$/,
         loader: "ts-loader",
         include: [path.resolve(__dirname, "src")],
         exclude: [/node_modules/]
+      },
+      {
+        test: /\.css$/,
+        loader: ["style-loader", { loader: "css-loader" }]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: "file-loader"
       }
     ]
   },
