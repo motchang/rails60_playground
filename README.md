@@ -1,24 +1,15 @@
-# README
+# 🚀 Welcome to your new awesome project!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project has been created using **webpack scaffold**, you can now run
 
-Things you may want to cover:
+```
+npm run build
+```
 
-* Ruby version
+or
 
-* System dependencies
+```
+yarn build
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to bundle your application
