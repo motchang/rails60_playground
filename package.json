@@ -1,17 +1,13 @@
 {
   "name": "rails60_playground",
+  "description": "My webpack project",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:motchang/rails60_playground.git",
   "author": "motchang <motchang@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "@webpack-cli/init": "^0.2.2",
-    "antd": "^3.22.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "webpack": "^4.39.2",
-    "write-file-webpack-plugin": "^4.5.1"
+  "engines": {
+    "yarn": "1.x"
   },
   "scripts": {
     "dev": "webpack --progress",
@@ -20,6 +16,14 @@
     "start": "webpack-dev-server",
     "heroku-postbuild": "yarn run build",
     "postinstall": "yarn run build"
+  },
+  "dependencies": {
+    "@webpack-cli/init": "^0.2.2",
+    "antd": "^3.22.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.2",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.2",
@@ -48,9 +52,5 @@
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
     "webpack-manifest-plugin": "^2.0.4"
-  },
-  "description": "My webpack project",
-  "engines": {
-    "yarn": "1.x"
   }
 }
