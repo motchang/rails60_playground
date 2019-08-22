@@ -16,12 +16,18 @@
     "start": "webpack-dev-server",
     "heroku-postbuild": "yarn run build",
     "postinstall": "yarn run build",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "antd": "^3.22.0",
+    "core-js": "^3.2.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11",
+    "regenerator-runtime": "^0.13.3",
+    "ts-optchain": "^0.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -30,8 +36,13 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/storybook__react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
     "babel-loader": "^8.0.6",
