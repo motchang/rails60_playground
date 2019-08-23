@@ -10,13 +10,10 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "webpack --progress",
-    "watch": "webpack --progress --watch",
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
     "heroku-postbuild": "yarn run build",
-    "postinstall": "yarn run build",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "antd": "^3.22.0",
