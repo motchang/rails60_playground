@@ -14,8 +14,8 @@ group :development, :test do
 end
 
 group :production do
-  gem "rails_12factor"
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'config'
@@ -40,7 +40,7 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 
-  gem 'brakeman', require: false
+  gem 'brakeman', '4.6.1', require: false
   gem 'rubocop', require: false
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop-performance', require: false
