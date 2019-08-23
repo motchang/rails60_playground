@@ -1,0 +1,79 @@
+version: '2'
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+       - image: circleci/ruby:2.6.3-node-browsers
+         environment:
+           RAILS_ENV: test
+           CIRCLE_ARTIFACTS: /tmp/test-results
+           DATABASE_HOST: 127.0.0.1
+           DATABASE_PORT: 3306
+           DATABASE_NAME: test
+           DATABASE_USERNAME: root
+           DATABASE_PASSWORD: pass
+       - image: circleci/mysql:5.7
+         environment:
+           MYSQL_USER: root
+           MYSQL_ROOT_PASSWORD: pass
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-ruby-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          keys:
+          - v1-dependencies-client-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies (ruby)
+          command: |
+            gem install bundler && bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run:
+          name: Install dependencies (javascript)
+          command: |
+            yarn install
+      - type: cache-save
+        key: v1-dependencies-ruby-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor
+      - type: cache-save
+        key: v1-dependencies-client-{{ checksum "yarn.lock" }}
+        paths:
+          - node_modules
+      - run:
+          name: Create DB
+          command: bundle exec rake db:create db:schema:load --trace
+      - run:
+          name: Run tests
+          command: |
+            mkdir /tmp/test-results
+            bundle exec rspec spec/ --format RspecJunitFormatter \
+                                    --out ${CIRCLE_ARTIFACTS}/test-results/rspec.xml
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
