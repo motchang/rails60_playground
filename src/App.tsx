@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, version, Icon, Button } from 'antd'
+import { Row, Col, Card, version, Icon, Button } from 'antd'
 import { hot } from 'react-hot-loader/root'
 
 import 'antd/dist/antd.css'
@@ -37,27 +37,65 @@ type Props = {
 const ButtonSize: React.FC<Props> = ({ size = 'small' }) => {
   return (
     <div>
-      <Button type="primary" size={size}>
-        Primary
-      </Button>
-      <Button size={size}>Normal</Button>
-      <Button type="dashed" size={size}>
-        Dashed
-      </Button>
-      <Button type="danger" size={size}>
-        Danger
-      </Button>
-      <Button type="link" size={size}>
-        Link
-      </Button>
-      <br />
-      <Button type="primary" shape="circle" icon="download" size={size} />
-      <Button type="primary" shape="round" icon="download" size={size}>
-        Download
-      </Button>
-      <Button type="primary" icon="download" size={size}>
-        Download
-      </Button>
+      <Row>
+        <Col span={24}>col-24</Col>
+      </Row>
+      <Row>
+        <Col span={12}>col-12</Col>
+        <Col span={12}>col-12</Col>
+      </Row>
+      <Row>
+        <Col span={8}>col-8</Col>
+        <Col span={8}>col-8</Col>
+        <Col span={8}>col-8</Col>
+      </Row>
+      <Row>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+        <Col span={6}>col-6</Col>
+      </Row>
+
+      <Row>
+        <Col span={6}>
+          <Button type="primary" size={size}>
+            Primary
+          </Button>
+        </Col>
+        <Col span={6}>
+          <Button size={size}>Normal</Button>
+        </Col>
+        <Col span={6}>
+          <Button type="dashed" size={size}>
+            Dashed
+          </Button>
+        </Col>
+        <Col span={6}>
+          <Button type="danger" size={size}>
+            Danger
+          </Button>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={6}>
+          <Button type="link" size={size}>
+            Link
+          </Button>
+        </Col>
+        <Col span={6}>
+          <Button type="primary" shape="circle" icon="download" size={size} />
+        </Col>
+        <Col span={6}>
+          <Button type="primary" shape="round" icon="download" size={size}>
+            Download
+          </Button>
+        </Col>
+        <Col span={6}>
+          <Button type="primary" icon="download" size={size}>
+            Download
+          </Button>
+        </Col>
+      </Row>
       <br />
 
       <Button.Group size={size}>
