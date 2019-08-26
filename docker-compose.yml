@@ -28,7 +28,7 @@ services:
   # ----------------------------------------------------------------------------
   mongodb:
     restart: always
-    image: mongo:4.2
+    image: mongo:3.6
     volumes:
       - mongo-data:/data/db
       - mongo-config:/data/configdb
