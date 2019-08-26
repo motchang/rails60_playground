@@ -8,6 +8,8 @@ volumes:
   db-data:
   bundle:
   node_modules:
+  mongo-data:
+  mongo-config:
 services:
   # ----------------------------------------------------------------------------
   mysql:
@@ -23,6 +25,17 @@ services:
       - default
     ports:
       - '3306:3306'
+  # ----------------------------------------------------------------------------
+  mongodb:
+    restart: always
+    image: mongo:3.6
+    volumes:
+      - mongo-data:/data/db
+      - mongo-config:/data/configdb
+    networks:
+      - default
+    ports:
+      - '27017:27017'
   # ----------------------------------------------------------------------------
   redis:
     restart: always
