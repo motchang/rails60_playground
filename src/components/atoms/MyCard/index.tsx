@@ -1,19 +1,18 @@
 import * as React from 'react'
 import { Card as AntCard } from 'antd'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { lorem } from 'faker'
 
 export type Props = {
   isLoading: boolean
+  contents: string
 }
 
-const MyCard: React.FC<Props> = ({ isLoading }) => (
+const MyCard: React.FC<Props> = ({ isLoading, contents }) => (
   <AntCard
     loading={isLoading}
     title="title"
     style={{ width: 500, margin: '10px' }}
   >
-    {lorem.paragraphs()}
+    {contents}
   </AntCard>
 )
 
