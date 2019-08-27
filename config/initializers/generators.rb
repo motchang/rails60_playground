@@ -17,4 +17,5 @@ Rails.application.config.generators do |gen|
                      helper_specs: true,
                      routing_specs: false
   gen.factory_bot dir: 'spec/factories'
+  gen.orm :active_record
 end

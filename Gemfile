@@ -25,6 +25,7 @@ gem 'slim-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'acts_as_tenant'
+gem 'mongoid', github: 'mongodb/mongoid', branch: 'master'
 
 group :development, :test do
   gem 'dotenv-rails'
