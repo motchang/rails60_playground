@@ -27,6 +27,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'acts_as_tenant'
 gem 'devise'
 gem 'devise-i18n'
+gem 'graphiql-rails', group: :development
+gem 'graphql'
 gem 'mongoid', github: 'mongodb/mongoid', branch: 'master'
 gem 'pundit'
 
