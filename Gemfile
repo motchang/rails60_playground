@@ -28,6 +28,7 @@ gem 'acts_as_tenant'
 gem 'devise'
 gem 'devise-i18n'
 gem 'mongoid', github: 'mongodb/mongoid', branch: 'master'
+gem 'pundit'
 
 group :development, :test do
   gem 'dotenv-rails'
