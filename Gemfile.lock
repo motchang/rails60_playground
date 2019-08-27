@@ -259,7 +259,7 @@ GEM
       rubocop (>= 0.35.1)
     rubocop-performance (1.4.1)
       rubocop (>= 0.71.0)
-    rubocop-rails (2.3.0)
+    rubocop-rails (2.3.1)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
     ruby-graphviz (1.2.4)
