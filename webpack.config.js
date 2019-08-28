@@ -45,8 +45,16 @@ module.exports = {
         exclude: [/node_modules/],
       },
       {
-        test: /\.css$/,
-        loader: [MiniCssExtractPlugin.loader, { loader: 'css-loader' }],
+        test: /\.(less)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'less-loader',
+            // https://github.com/ant-design/ant-design/issues/7927
+            options: { javascriptEnabled: true },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
