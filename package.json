@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "heroku-postbuild": "yarn run build",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint": "eslint './src/**/*.{ts,tsx}' --cache",
     "start": "webpack-dev-server",
     "storybook": "start-storybook -p 6006"
   },
