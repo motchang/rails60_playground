@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "e2e": "testcafe 'chrome --no-sandobox' e2e/",
     "heroku-postbuild": "yarn run build",
     "lint": "eslint './src/**/*.{ts,tsx}' --cache",
     "start": "webpack-dev-server",
@@ -70,6 +71,7 @@
     "mini-css-extract-plugin": "0.8.0",
     "prettier": "1.18.2",
     "style-loader": "1.0.0",
+    "testcafe": "^1.4.1",
     "typescript": "3.5.3",
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
