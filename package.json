@@ -12,6 +12,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "e2e": "testcafe 'chrome --no-sandobox' e2e/",
+    "browserstack": "testcafe 'browserstack:Chrome@76.0:OS X Mojave' e2e/",
     "heroku-postbuild": "yarn run build",
     "lint": "eslint './src/**/*.{ts,tsx}' --cache",
     "start": "webpack-dev-server",
@@ -72,6 +73,7 @@
     "prettier": "1.18.2",
     "style-loader": "1.0.0",
     "testcafe": "^1.4.1",
+    "testcafe-browser-provider-browserstack": "^1.9.0",
     "typescript": "3.5.3",
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
