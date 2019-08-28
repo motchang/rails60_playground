@@ -8,6 +8,9 @@
 
 
 module.exports = async ({ config }) => {
+  config.module.rules = config.module.rules.filter(
+    f => f.test.toString() !== '/\\.css$/'
+  )
   config.module.rules.push(
     { test: /\.tsx?$/, loader: 'babel-loader' },
     {
