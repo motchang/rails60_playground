@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react-hooks'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/prefer-interface': 'off',
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/no-unused-vars': ['error', {
       'vars': 'all',
       'args': 'all',
