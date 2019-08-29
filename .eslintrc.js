@@ -33,7 +33,7 @@ module.exports = {
           '**/*.config.{js,ts}',
           '**/*.spec.{ts,tsx}',
           '**/*.stories.{ts,tsx}',
-          'e2e/*.{ts,tsx}',
+          'e2e/**/*.{ts,tsx}',
         ],
       },
     ],
