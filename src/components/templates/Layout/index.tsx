@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout as AntLayout, Button, Drawer } from 'antd'
+import { Layout as AntLayout, Button } from 'antd'
 import { useWindowSize, useToggle } from 'react-use'
 
 import { Sider } from 'components/organisms/Sider'
