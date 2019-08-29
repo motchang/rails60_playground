@@ -43,6 +43,9 @@ module.exports = {
         loader: 'babel-loader',
         include: [path.resolve(__dirname, 'src')],
         exclude: [/node_modules/],
+        options: {
+          cacheDirectory: true
+        }
       },
       {
         test: /\.css$/,
