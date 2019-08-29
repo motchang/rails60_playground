@@ -13,7 +13,7 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
-  'parserOptions': {
+  parserOptions: {
     'project': './tsconfig.json'
   },
   plugins: ['@typescript-eslint', 'react-hooks'],
