@@ -12,13 +12,16 @@ module.exports = {
     '@babel/react',
   ],
   plugins: [
+    'emotion',
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     'ts-optchain',
   ],
   env: {
     development: {
-      plugins: ['react-hot-loader/babel'],
+      plugins: [
+        'react-hot-loader/babel',
+      ],
     },
   },
 }

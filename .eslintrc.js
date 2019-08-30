@@ -16,7 +16,7 @@ module.exports = {
   'parserOptions': {
     'project': './tsconfig.json'
   },
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react-hooks', 'emotion'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
@@ -26,6 +26,7 @@ module.exports = {
       'ignoreRestSiblings': false,
       'argsIgnorePattern': '^_',
     }],
+    'emotion/syntax-preference': [2, "string"],
     'import/no-extraneous-dependencies': [
       'error',
       {
