@@ -53,4 +53,7 @@ Rails.application.configure do
 
   # For devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # https://railsguides.jp/debugging_rails_applications.html#web-console-gem%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%83%90%E3%83%83%E3%82%B0-%E8%A8%AD%E5%AE%9A
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
 end
