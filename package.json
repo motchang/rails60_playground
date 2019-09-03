@@ -17,6 +17,8 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
+    "@emotion/core": "10.0.16",
+    "@emotion/styled": "10.0.15",
     "antd": "^3.22.0",
     "core-js": "^3.2.1",
     "react": "^16.9.0",
@@ -49,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
     "babel-loader": "8.0.6",
+    "babel-plugin-emotion": "10.0.16",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-plugin-ts-optchain": "1.1.5",
     "clean-webpack-plugin": "3.0.0",
@@ -56,6 +59,7 @@
     "eslint": "6.2.2",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.1.0",
+    "eslint-plugin-emotion": "10.0.14",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.0",

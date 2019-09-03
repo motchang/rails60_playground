@@ -1,31 +1,41 @@
 import React from 'react'
 import { Card, version, Icon, Button } from 'antd'
+import styled from '@emotion/styled'
 import { hot } from 'react-hot-loader/root'
 
 import 'antd/dist/antd.css'
 
+const StyledCard = styled(Card)`
+  width: 300px;
+  && {
+    margin: 20px 0;
+  }
+`
+
+const StyledLargeCard = styled(Card)`
+  width: 600px;
+`
+
 const SampleCards = () => {
   return (
     <div>
-      <Card
+      <StyledCard
         title="Default size card"
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         extra={<a href="#">More</a>}
-        style={{ width: 300, margin: '20px' }}
       >
         <p>Card content</p>
         <p>Card content</p>
         <p>Card content</p>
-      </Card>
-      <Card
+      </StyledCard>
+      <StyledLargeCard
         size="default"
         title="Large size card"
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         extra={<a href="#">More</a>}
-        style={{ width: 600, margin: '20px' }}
       >
         <ButtonSize />
-      </Card>
+      </StyledLargeCard>
     </div>
   )
 }
@@ -74,21 +84,23 @@ const ButtonSize: React.FC<Props> = ({ size = 'small' }) => {
   )
 }
 
+const Wrapper = styled('div')`
+  padding: 16px;
+`
+const StyledButton = styled(Button)`
+  margin: 16px 0;
+`
+
 const BaseApp: React.FC = () => {
   return (
-    <div>
+    <Wrapper>
       <div className="App">
         <h1>Please fork this codesandbox to reproduce your issue.</h1>
         <div>Current antd version: {version}</div>
-        <div style={{ marginTop: '16px' }}>
-          <Button type="primary">Example buttons</Button>
-        </div>
-
-        <div style={{ padding: '10px' }} />
-
+        <StyledButton type="primary">Example buttons</StyledButton>
         <SampleCards />
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
