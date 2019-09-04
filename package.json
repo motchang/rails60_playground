@@ -21,8 +21,10 @@
     "@emotion/styled": "10.0.15",
     "antd": "^3.22.0",
     "core-js": "^3.2.1",
+    "froala-editor": "3.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-froala-wysiwyg": "3.0.5",
     "react-hot-loader": "^4.12.11",
     "regenerator-runtime": "^0.13.3",
     "ts-optchain": "^0.1.8"

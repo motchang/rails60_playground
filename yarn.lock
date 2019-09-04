@@ -3610,7 +3610,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.3:
+create-react-class@^15.5.2, create-react-class@^15.5.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -5135,6 +5135,11 @@ fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+
+froala-editor@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-3.0.5.tgz#abcfb93c1133de3870de727cc1d16fa194aeb8aa"
+  integrity sha512-DWdKuhtRnI/OSOVaC03Vqc3Y9AiqZVCPQ/D8Si/3yu/FJgxdjFVGluseAEVmz2AhHe2lh6ni2S7SqDOuk/8XJg==
 
 from2@^2.1.0:
   version "2.3.0"
@@ -9107,6 +9112,14 @@ react-focus-lock@^1.18.3:
     focus-lock "^0.6.3"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.0"
+
+react-froala-wysiwyg@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/react-froala-wysiwyg/-/react-froala-wysiwyg-3.0.5.tgz#564263dea7699ec62190806228e5f27a868acc24"
+  integrity sha512-tM93Tt3gR8P8HBQASAZ3EtkXNpHhJf0NinHegDHSCWup5l7YvT8vrGl1HJIfgd0aXiZORiEK9p9fVyQyQNgtVQ==
+  dependencies:
+    create-react-class "^15.5.2"
+    froala-editor "3.0.5"
 
 react-helmet-async@^1.0.2:
   version "1.0.2"

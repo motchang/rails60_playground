@@ -5,6 +5,8 @@ import { hot } from 'react-hot-loader/root'
 
 import 'antd/dist/antd.css'
 
+import FroalaEditor from 'components/FroalaEditor'
+
 const StyledCard = styled(Card)`
   width: 300px;
   && {
@@ -100,6 +102,7 @@ const BaseApp: React.FC = () => {
         <StyledButton type="primary">Example buttons</StyledButton>
         <SampleCards />
       </div>
+      <FroalaEditor />
     </Wrapper>
   )
 }
