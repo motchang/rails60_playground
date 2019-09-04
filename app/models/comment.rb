@@ -7,4 +7,5 @@ class Comment
   field :description, type: String
 
   belongs_to :post
+  belongs_to_record :user
 end
