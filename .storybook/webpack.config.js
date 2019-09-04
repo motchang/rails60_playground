@@ -8,6 +8,10 @@
 
 
 module.exports = async ({ config }) => {
+    // https://github.com/storybookjs/storybook/issues/6319#issuecomment-477852640
+    config.module.rules = config.module.rules.filter(
+      rule => rule.test.toString() !== '/\\.css$/'
+    )
   config.module.rules.push(
     { test: /\.tsx?$/, loader: 'babel-loader' },
     {
