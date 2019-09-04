@@ -24,6 +24,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.11",
+    "react-use-form-state": "^0.11.0",
     "regenerator-runtime": "^0.13.3",
     "ts-optchain": "^0.1.8"
   },
