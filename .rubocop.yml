@@ -1,12 +1,19 @@
+inherit_from: .rubocop_todo.yml
+
 #
 
 AllCops:
   Exclude:
+    - 'Rakefile'
+    - 'bin/**/*'
     - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'src/**/*'
+    - 'db/**/*'
   TargetRubyVersion: 2.6
 
 Metrics/LineLength:
-  Max: 150
+  Max: 154
 
 Layout/AlignHash:
   EnforcedHashRocketStyle:
@@ -22,3 +29,21 @@ Layout/EmptyLinesAroundBlockBody:
 
 Metrics/BlockLength:
   Max: 100
+
+Metrics/MethodLength:
+  Max: 100
+
+Naming/PredicateName:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/initializers/active_record/base.rb'
+    - 'config/initializers/mongoid/active_record_bridge.rb'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
