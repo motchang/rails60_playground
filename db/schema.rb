@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_024416) do
+ActiveRecord::Schema.define(version: 2019_09_04_054753) do
+
+  create_table "sites", force: :cascade do |t|
+    t.string "fqdn"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fqdn"], name: "index_sites_on_fqdn", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
