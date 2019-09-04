@@ -20,6 +20,7 @@
     "@emotion/core": "10.0.16",
     "@emotion/styled": "10.0.15",
     "antd": "^3.22.0",
+    "braft-editor": "2.3.7",
     "core-js": "^3.2.1",
     "formik": "^1.5.8",
     "react": "^16.9.0",
