@@ -5,12 +5,11 @@ class Post
   include Mongoid::Timestamps
 
   field :title, type: String
-  validates_presence_of :title
-
   field :description, type: String
-  validates_presence_of :description
-
   field :truncated_preview, type: String
+
+  validates_presence_of :title
+  validates_presence_of :description
 
   has_many :comments
 end
