@@ -1,0 +1,24 @@
+#
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.6
+
+Metrics/LineLength:
+  Max: 150
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle:
+    - key
+    - table
+  EnforcedColonStyle:
+    - key
+    - table
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+Metrics/BlockLength:
+  Max: 100
