@@ -5,6 +5,10 @@ import { action } from '@storybook/addon-actions'
 import IconDropdown from '.'
 
 storiesOf('molecules/IconDropdown', module)
+  .add('default', () => {
+    const menuClickAction = action('onClickContentMenu')
+    return <IconDropdown menuClickAction={menuClickAction} />
+  })
   .add('chapter', () => {
     const menuClickAction = (key: string) => {
       action(`onClickChapterMenu`)(key)
