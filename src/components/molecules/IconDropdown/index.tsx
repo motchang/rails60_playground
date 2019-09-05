@@ -38,7 +38,6 @@ const createMenu = ({ type, menuClickAction }: Props) => {
       <Menu.Item key="5">穴埋め問題</Menu.Item>
     </Menu>
   )
-  return null
 }
 
 const IconDropdown: React.FC<Props> = ({ menuClickAction, type }) => {
