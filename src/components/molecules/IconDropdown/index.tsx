@@ -1,15 +1,20 @@
 import * as React from 'react'
 import { Dropdown, Icon, Menu } from 'antd'
 
-export type Props = {
-  menuClickAction: (key: string) => void
+type ViewProps = {
   type: 'chapter' | 'content'
 }
+
+type ActionProps = {
+  menuClickAction?: (key: string) => void
+}
+
+type Props = ViewProps & ActionProps
 
 const createMenu = ({ type, menuClickAction }: Props) => {
   if (type === 'chapter') {
     return (
-      <Menu onClick={({ key }) => menuClickAction(key)}>
+      <Menu onClick={({ key }) => menuClickAction && menuClickAction(key)}>
         <Menu.Item key="0">テキスト</Menu.Item>
         <Menu.Divider />
         <Menu.Item key="1">レッスン</Menu.Item>
@@ -20,7 +25,7 @@ const createMenu = ({ type, menuClickAction }: Props) => {
   }
   if (type === 'content') {
     return (
-      <Menu onClick={({ key }) => menuClickAction(key)}>
+      <Menu onClick={({ key }) => menuClickAction && menuClickAction(key)}>
         <Menu.Item key="0">扉ページ</Menu.Item>
         <Menu.Divider />
         <Menu.Item key="1">作文</Menu.Item>
