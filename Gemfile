@@ -7,7 +7,7 @@ ruby '2.6.4'
 
 gem 'rails', '~> 6.0.3'
 
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.1'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
