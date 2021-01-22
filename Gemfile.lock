@@ -85,7 +85,7 @@ GEM
     childprocess (3.0.0)
     choice (0.2.0)
     coderay (1.1.2)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     config (2.2.3)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
@@ -148,7 +148,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.10.1)
+    jbuilder (2.11.0)
       activesupport (>= 5.0.0)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -335,7 +335,7 @@ DEPENDENCIES
   config
   dotenv-rails
   factory_bot_rails
-  jbuilder (~> 2.10)
+  jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.5)
   pg
   pry-byebug
