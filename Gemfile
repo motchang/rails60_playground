@@ -9,12 +9,9 @@ gem 'rails', '~> 6.1.1'
 
 gem 'puma', '~> 5.1'
 
-group :development, :test do
-  gem 'sqlite3', '~> 1.4'
-end
+gem 'pg'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

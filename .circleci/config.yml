@@ -39,15 +39,12 @@ jobs:
           BUNDLE_RETRY: "3"
           RAILS_ENV: test
           CIRCLE_ARTIFACTS: /tmp/test-results
-          DATABASE_HOST: 127.0.0.1
-          DATABASE_PORT: 3306
-          DATABASE_NAME: test
-          DATABASE_USERNAME: root
-          DATABASE_PASSWORD: pass
-      - image: circleci/mysql:5.7
+          DATABASE_NAME: rails60_playground_test
+          DATABASE_USERNAME: ubuntu
+      - image: circleci/postgres:10-alpine-ram
         environment:
-          MYSQL_USER: root
-          MYSQL_ROOT_PASSWORD: pass
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: rails60_playground_test
     steps:
       - checkout
       - ruby/install-deps
