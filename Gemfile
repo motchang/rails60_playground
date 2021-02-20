@@ -3,18 +3,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.4'
+ruby '2.6.6'
 
 gem 'rails', '~> 6.1.1'
 
 gem 'puma', '~> 5.1'
 
-group :development, :test do
-  gem 'sqlite3', '~> 1.4'
-end
+gem 'pg'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

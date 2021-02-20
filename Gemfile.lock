@@ -299,7 +299,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     temple (0.8.1)
     thor (1.0.1)
     tilt (2.0.9)
@@ -355,12 +354,11 @@ DEPENDENCIES
   rubocop-rails
   selenium-webdriver
   slim-rails
-  sqlite3 (~> 1.4)
   web-console (>= 3.3.0)
   webdrivers
 
 RUBY VERSION
-   ruby 2.6.4p104
+   ruby 2.6.6p146
 
 BUNDLED WITH
-   2.0.2
+   2.2.5

@@ -1,62 +1,71 @@
-version: '2'
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.0
+  node: circleci/node@2
+  slack: circleci/slack@4.1
+
 jobs:
   build:
     docker:
+      - image: cimg/ruby:2.6.6-browsers # use a tailored CircleCI docker image.
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout # pull down our git code.
+      - ruby/install-deps # use the ruby orb to install dependencies
+      # use the node orb to install our packages
+      # specifying that we use `yarn` and to cache dependencies with `yarn.lock`
+      # learn more: https://circleci.com/docs/2.0/caching/
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
+      - slack/notify:
+          event: fail
+          mentions: "@motchang"
+          template: basic_fail_1
+  test:
+    parallelism: 1
+    docker:
       # specify the version you desire here
-       - image: circleci/ruby:2.6.4-node-browsers
-         environment:
-           RAILS_ENV: test
-           CIRCLE_ARTIFACTS: /tmp/test-results
-           DATABASE_HOST: 127.0.0.1
-           DATABASE_PORT: 3306
-           DATABASE_NAME: test
-           DATABASE_USERNAME: root
-           DATABASE_PASSWORD: pass
-       - image: circleci/mysql:5.7
-         environment:
-           MYSQL_USER: root
-           MYSQL_ROOT_PASSWORD: pass
-    working_directory: ~/repo
+      - image: cimg/ruby:2.6.6-browsers # this is our primary docker image, where step commands run.
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          BUNDLE_JOBS: "3"
+          BUNDLE_RETRY: "3"
+          RAILS_ENV: test
+          CIRCLE_ARTIFACTS: /tmp/test-results
+          DATABASE_NAME: rails60_playground_test
+          DATABASE_USERNAME: ubuntu
+      - image: circleci/postgres:10-alpine-ram
+        environment:
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: rails60_playground_test
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-ruby-{{ checksum "Gemfile.lock" }}
-      - restore_cache:
-          keys:
-          - v1-dependencies-client-{{ checksum "yarn.lock" }}
+      - ruby/install-deps
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
+      # Here we make sure that the secondary container boots
+      # up before we run operations on the database.
       - run:
-          name: Install dependencies (ruby)
-          command: |
-            gem install bundler && bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run:
-          name: Install dependencies (javascript)
-          command: |
-            yarn install
-      - type: cache-save
-        key: v1-dependencies-ruby-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor
-      - type: cache-save
-        key: v1-dependencies-client-{{ checksum "yarn.lock" }}
-        paths:
-          - node_modules
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Create DB
           command: bundle exec rake db:create db:schema:load --trace
-      - run:
-          name: Run tests
-          command: |
-            mkdir /tmp/test-results
-            bundle exec rspec spec/ --format RspecJunitFormatter \
-                                    --out ${CIRCLE_ARTIFACTS}/test-results/rspec.xml
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+      - ruby/rspec-test
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+      - slack/notify:
+          event: fail
+          mentions: "@motchang"
+          template: basic_fail_1
   deploy:
     docker:
       - image: buildpack-deps:trusty
@@ -66,3 +75,31 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      - slack/notify:
+          event: fail
+          mentions: "@motchang"
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+workflows:
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build:
+          context:
+            - docker-hub-auth
+            - slack-notifier-motchang
+            - slack-context-rails60-playground
+      - test:
+          context:
+            - docker-hub-auth
+            - slack-notifier-motchang
+            - slack-context-rails60-playground
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
