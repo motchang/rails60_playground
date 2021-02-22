@@ -16,7 +16,7 @@ group :production do
 end
 
 gem 'config'
-gem 'jbuilder', '~> 2.10'
+gem 'jbuilder', '~> 2.11'
 gem 'slim-rails'
 
 gem 'bootsnap', '>= 1.4.2', require: false

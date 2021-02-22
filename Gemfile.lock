@@ -148,7 +148,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.10.1)
+    jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -334,7 +334,7 @@ DEPENDENCIES
   config
   dotenv-rails
   factory_bot_rails
-  jbuilder (~> 2.10)
+  jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.5)
   pg
   pry-byebug
