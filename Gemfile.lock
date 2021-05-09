@@ -89,8 +89,6 @@ GEM
     config (3.1.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
-    coolline (0.5.0)
-      unicode_utils (~> 1.4)
     crass (1.0.6)
     debug_inspector (0.0.3)
     deep_merge (1.2.1)
@@ -174,8 +172,6 @@ GEM
     pry-byebug (3.8.0)
       byebug (~> 11.0)
       pry (~> 0.10)
-    pry-coolline (0.2.5)
-      coolline (~> 0.5)
     pry-doc (1.1.0)
       pry (~> 0.11)
       yard (~> 0.9.11)
@@ -300,7 +296,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
-    unicode_utils (1.4.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -333,7 +328,6 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.6)
   pg
   pry-byebug
-  pry-coolline
   pry-doc
   pry-rails
   pry-stack_explorer
@@ -356,4 +350,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.5
+   2.2.17
