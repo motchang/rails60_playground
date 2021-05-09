@@ -25,7 +25,6 @@ group :development, :test do
   gem 'dotenv-rails'
 
   gem 'pry-byebug'
-  gem 'pry-coolline'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
