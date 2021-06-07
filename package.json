@@ -17,10 +17,10 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@emotion/core": "10.0.17",
-    "@emotion/styled": "10.0.17",
+    "@emotion/core": "10.1.1",
+    "@emotion/styled": "10.0.27",
     "antd": "^3.22.0",
-    "braft-editor": "2.3.8",
+    "braft-editor": "2.3.9",
     "core-js": "^3.2.1",
     "formik": "^1.5.8",
     "react": "^16.9.0",
