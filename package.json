@@ -17,14 +17,14 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@emotion/core": "10.1.1",
-    "@emotion/styled": "10.0.27",
-    "antd": "^3.22.0",
+    "@emotion/core": "11.0.0",
+    "@emotion/styled": "11.3.0",
+    "antd": "^4.0.0",
     "braft-editor": "2.3.9",
     "core-js": "^3.2.1",
-    "formik": "^1.5.8",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "formik": "^2.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-hot-loader": "^4.12.11",
     "regenerator-runtime": "^0.13.3",
     "ts-optchain": "^0.1.8"
