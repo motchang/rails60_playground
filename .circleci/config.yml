@@ -40,7 +40,7 @@ jobs:
           CIRCLE_ARTIFACTS: /tmp/test-results
           DATABASE_NAME: rails60_playground_test
           DATABASE_USERNAME: ubuntu
-      - image: circleci/postgres:10-alpine-ram
+      - image: circleci/postgres:12-alpine-ram
         environment:
           POSTGRES_USER: ubuntu
           POSTGRES_DB: rails60_playground_test
