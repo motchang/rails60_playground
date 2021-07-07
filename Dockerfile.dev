@@ -1,5 +1,5 @@
 # -*- mode: dockerfile -*-
-FROM ruby:3.0.1
+FROM ruby:3.0.2
 
 ENV ENTRYKIT_VERSION 0.4.0
 ENV EDITOR vim
