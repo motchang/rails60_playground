@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.4
   node: circleci/node@2
-  slack: circleci/slack@4.4.2
+  slack: circleci/slack@4.4.4
 
 jobs:
   build:
