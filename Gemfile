@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.6'
+  gem 'listen', '>= 3.0.5', '< 3.8'
 
   gem 'brakeman', '5.0.4', require: false
   gem 'rubocop', require: false
