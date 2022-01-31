@@ -36,7 +36,7 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.6'
 
-  gem 'brakeman', '5.0.4', require: false
+  gem 'brakeman', '5.2.1', require: false
   gem 'rubocop', require: false
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop-performance', require: false
